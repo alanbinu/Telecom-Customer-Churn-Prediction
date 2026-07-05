@@ -1,72 +1,80 @@
 # 🤖 Trained Models
 
-This folder contains the machine learning artifacts used in the Telecom Customer Churn Prediction project.
+This folder contains the machine learning artifacts used in the **Telecom Customer Churn Prediction** project.
 
 ---
 
-## 📁 Files
+## 📁 Available Files
 
 | File | Description |
 |------|-------------|
-| `Scaler.pkl` | StandardScaler used to normalize numerical features before prediction. |
+| `Scaler.pkl` | StandardScaler used to normalize numerical features before model prediction. |
 
 ---
 
-## 📊 Model Information
+## 🏆 Final Model
 
-The project was trained using multiple machine learning algorithms, including:
+Multiple machine learning algorithms were trained and evaluated to identify the best performing model.
+
+### Models Evaluated
 
 - Logistic Regression
 - Decision Tree
 - Random Forest
-- K Nearest Neighbors
-- Support Vector Machine
+- K Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
 - Naive Bayes
 
-After evaluation, the **Random Forest Classifier** achieved the best overall performance and was selected as the final model.
+After comparing performance metrics, the **Random Forest Classifier** was selected as the final model.
 
-**Final Model Accuracy:** **86.77%**
+### Performance
+
+| Metric | Value |
+|---------|------:|
+| Accuracy | **86.77%** |
+| Selected Model | Random Forest Classifier |
 
 ---
 
-## ⚠️ Why isn't the trained model included?
+## 🔄 Model Development Pipeline
+
+```text
+Dataset
+   │
+   ▼
+Data Cleaning
+   │
+   ▼
+Exploratory Data Analysis
+   │
+   ▼
+Feature Engineering
+   │
+   ▼
+Feature Scaling (StandardScaler)
+   │
+   ▼
+Model Training
+   │
+   ▼
+Model Evaluation
+   │
+   ▼
+Customer Churn Prediction
+```
+
+---
+
+## ⚠️ Model Availability
 
 The trained Random Forest model (`telecom_churn_Project.pkl`) is approximately **75 MB**, which exceeds GitHub's web upload limit.
 
-The model can be regenerated at any time by running the notebook available in the **notebooks** folder.
+The model can be regenerated at any time by executing the notebook located in the **notebooks** folder.
 
 ---
 
-## 🔄 Model Pipeline
+## 📌 Notes
 
-Dataset
-
-⬇️
-
-Data Cleaning
-
-⬇️
-
-Feature Engineering
-
-⬇️
-
-Feature Scaling (StandardScaler)
-
-⬇️
-
-Model Training
-
-⬇️
-
-Model Evaluation
-
-⬇️
-
-Customer Churn Prediction
-
----
-
-## 📌 Note
-
-This repository focuses on demonstrating the complete machine learning workflow. The preprocessing scaler is included because it is required during prediction, while the trained model can be recreated using the provided notebook.
+- The `Scaler.pkl` file is included because it is required during prediction.
+- The complete training pipeline is fully documented in the Jupyter Notebook.
+- All preprocessing, feature engineering, model training, and evaluation steps can be reproduced using the notebook provided in this repository.
