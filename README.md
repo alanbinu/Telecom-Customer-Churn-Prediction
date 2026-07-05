@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="images/telecom-churn-banner.png" width="100%">
+</p>
+
 <div align="center">
 
 # 📊 Telecom Customer Churn Prediction
