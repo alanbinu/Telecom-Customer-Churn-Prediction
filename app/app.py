@@ -67,21 +67,27 @@ st.markdown(f"""
 # Load artifacts — UNCHANGED PIPELINE LOGIC
 # ----------------------------------------------------------------------------
 @st.cache_resource
+from pathlib import Path
+import joblib
+import streamlit as st
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODEL_DIR = BASE_DIR / "models"
+
 def load_artifacts():
-    model = joblib.load("telecom_churn_Project.pkl")
-    scaler = joblib.load("scaler.pkl")
+    model = joblib.load(MODEL_DIR / "telecom_churn_Project.pkl")
+    scaler = joblib.load(MODEL_DIR / "Scaler.pkl")
 
     expected_type = "RandomForestClassifier"
     actual_type = type(model).__name__
+
     if actual_type != expected_type:
         st.error(
-            f"Loaded model is {actual_type}, not {expected_type}. "
-            f"Refusing to proceed with predictions — check which .pkl file is deployed."
+            f"Loaded model is {actual_type}, not {expected_type}."
         )
         st.stop()
 
     return model, scaler
-
 
 model, scaler = load_artifacts()
 FEATURE_ORDER = list(scaler.feature_names_in_)  # ground truth, 70 columns
