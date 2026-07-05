@@ -25,23 +25,41 @@ The application provides an interactive interface that allows users to enter cus
 
 ---
 
-## ▶️ Run Locally
+# ▶️ How to Run the Project
 
-Install the required packages:
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/alanbinu/Telecom-Customer-Churn-Prediction.git
+```
+
+### 2️⃣ Navigate to the project directory
+
+```bash
+cd Telecom-Customer-Churn-Prediction
+```
+
+### 3️⃣ Install the required dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Start the application:
+### 4️⃣ Launch the Streamlit application
+
+Since the Streamlit application is inside the **app** folder, run:
 
 ```bash
-streamlit run app.py
+streamlit run app/app.py
 ```
 
-The application will automatically open in your browser.
+### 5️⃣ Open the application
 
----
+If the browser does not open automatically, visit:
+
+```
+http://localhost:8501
+```
 
 ## 🧠 Workflow
 
