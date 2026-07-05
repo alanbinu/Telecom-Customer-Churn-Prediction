@@ -66,14 +66,13 @@ st.markdown(f"""
 # ----------------------------------------------------------------------------
 # Load artifacts — UNCHANGED PIPELINE LOGIC
 # ----------------------------------------------------------------------------
-@st.cache_resource
 from pathlib import Path
 import joblib
-import streamlit as st
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_DIR = BASE_DIR / "models"
 
+@st.cache_resource
 def load_artifacts():
     model = joblib.load(MODEL_DIR / "telecom_churn_Project.pkl")
     scaler = joblib.load(MODEL_DIR / "Scaler.pkl")
@@ -95,7 +94,7 @@ FEATURE_ORDER = list(scaler.feature_names_in_)  # ground truth, 70 columns
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("telecom_churn_data.csv")
+    return pd.read_csv(BASE_DIR / "dataset" / "telecom_churn_data.csv")
 
 
 df_raw = load_data()
