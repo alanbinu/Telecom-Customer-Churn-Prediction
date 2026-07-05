@@ -29,6 +29,27 @@ The project covers the complete data science workflow, from data cleaning and ex
 
 ---
 
+---
+
+# 📊 Dataset Overview
+
+<p align="center">
+<img src="images/dataset-overview.png" width="95%">
+</p>
+
+The dataset consists of 74,983 telecom customers with demographic information, service usage, billing history, complaints, network quality metrics, and customer satisfaction scores.
+
+The target variable is **Churn_Flag**, indicating whether a customer stayed or left the telecom service.
+
+---
+# 📈 Customer Churn Distribution
+
+<p align="center">
+<img src="images/churn-distribution.png" width="80%">
+</p>
+
+The dataset is moderately imbalanced, with approximately **80% retained customers** and **20% churned customers**.
+
 # 🎯 Business Objective
 
 The primary objective of this project is to:
@@ -185,6 +206,14 @@ Key analyses included:
 
 ---
 
+# 🔥 Correlation Analysis
+
+<p align="center">
+<img src="images/correlation-heatmap.png" width="95%">
+</p>
+
+The correlation matrix highlights the strongest relationships between customer attributes and churn, helping identify the most influential variables for model training.
+
 # ⚙ Data Preprocessing
 
 The preprocessing pipeline included:
@@ -211,6 +240,25 @@ The following classification algorithms were trained and evaluated:
 - Naive Bayes
 
 ---
+
+# ⚙️ Model Comparison
+
+<p align="center">
+<img src="images/model-comparison.png" width="85%">
+</p>
+
+Six machine learning algorithms were evaluated.
+
+Random Forest achieved the highest overall accuracy and was selected as the final production model.
+
+# ⭐ Feature Importance
+
+<p align="center">
+<img src="images/feature-importance.png" width="85%">
+</p>
+
+Complaint Count, Satisfaction Score, NPS Score, Customer Service Calls, and Dropped Call Rate were identified as the strongest predictors of customer churn.
+
 
 # 🏆 Best Performing Model
 
@@ -243,6 +291,22 @@ The model identified the following features as the strongest predictors of custo
 - Network Quality
 
 ---
+
+# 📉 Confusion Matrix
+
+<p align="center">
+<img src="images/confusion-matrix.png" width="70%">
+</p>
+
+The confusion matrix demonstrates the classification performance of the Random Forest model on the unseen test dataset.
+
+# 📈 ROC Curve
+
+<p align="center">
+<img src="images/roc-curve.png" width="70%">
+</p>
+
+The Random Forest classifier achieved an **AUC of approximately 0.91**, indicating strong discriminative ability between churned and retained customers.
 
 # 💡 Business Insights
 
