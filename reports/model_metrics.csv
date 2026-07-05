@@ -1,0 +1,7 @@
+Model,Accuracy_Percent
+Random Forest,87.56168
+Logistic Regression,87.423872
+SVM,87.254946
+KNN,83.894199
+Decision Tree,81.720382
+Naive Bayes,77.555012
