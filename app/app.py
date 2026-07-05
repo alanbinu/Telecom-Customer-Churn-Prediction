@@ -89,7 +89,11 @@ def load_artifacts():
     return model, scaler
 
 model, scaler = load_artifacts()
-FEATURE_ORDER = list(scaler.feature_names_in_)  # ground truth, 70 columns
+if hasattr(scaler, "feature_names_in_"):
+    FEATURE_ORDER = list(scaler.feature_names_in_)
+else:
+    st.error("Scaler does not contain feature names.")
+    st.stop()# ground truth, 70 columns
 
 
 @st.cache_data
