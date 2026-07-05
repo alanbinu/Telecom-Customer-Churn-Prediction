@@ -350,34 +350,37 @@ Planned enhancements include:
 
 ---
 
-# ▶ How to Run the Project
+## ▶️ How to Run the Project
 
-Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/alanbinu/Telecom-Customer-Churn-Prediction.git
 ```
 
-Navigate to the project directory
+### 2. Navigate into the project
 
 ```bash
 cd Telecom-Customer-Churn-Prediction
 ```
 
-Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Streamlit application
+### 4. Run the Streamlit application
 
 ```bash
-streamlit run app.py
+streamlit run app/app.py
 ```
 
----
+### 5. Open in your browser
 
+```
+http://localhost:8501
+```
 # 📚 Learning Outcomes
 
 This project demonstrates practical knowledge of:
