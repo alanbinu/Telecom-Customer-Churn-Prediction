@@ -26,6 +26,11 @@ import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
+import plotly.graph_objects as go
+from pathlib import Path
+
+from sklearn.model_selection import train_test_split
+
 st.set_page_config(
     page_title="Telecom Churn Prediction",
     page_icon="📡",
@@ -62,12 +67,26 @@ st.markdown(f"""
     .result-card-churn {{ background: linear-gradient(135deg, #FDECEA, #FFFFFF); border: 1px solid {ACCENT_RED}; border-radius: 14px; padding: 28px; }}
 </style>
 """, unsafe_allow_html=True)
-
+from pathlib import Path
 # ----------------------------------------------------------------------------
 # Load artifacts — UNCHANGED PIPELINE LOGIC
 # ----------------------------------------------------------------------------
-from pathlib import Path
-import joblib
+@st.cache_resource
+def load_artifacts():
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    MODEL_DIR = BASE_DIR / "models"
+
+    model = joblib.load(MODEL_DIR / "telecom_churn_Project.pkl")
+    scaler = joblib.load(MODEL_DIR / "Scaler.pkl")
+
+    expected_type = "RandomForestClassifier"
+    actual_type = type(model).__name__
+
+    if actual_type != expected_type:
+        st.error(f"Loaded model is {actual_type}, not {expected_type}.")
+        st.stop()
+
+    return model, scaler
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_DIR = BASE_DIR / "models"
